@@ -25,10 +25,10 @@ const cachorro = new Cachorro("Rex", "Cachorro", "Osso")
 const gato = new Gato("Mingau", "Gato", "Peixe")
 const coelho = new Coelho("Pipoca", "Coelho", "Cenoura")
 
-cachorro.Falar(cachorro)
+cachorro.Falar()
 console.log() // quebra de linha
-gato.Falar(gato)
+gato.Falar()
 console.log() // quebra de linha
-coelho.Falar(coelho)
+coelho.Falar()
 
 
