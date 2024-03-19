@@ -1,5 +1,7 @@
-function Animal(nome) {
+function Animal(nome, especie, comidaFavorita) {
     this.nome = nome
+    this.especie =  especie
+    this.comidaFavorita = comidaFavorita
     this.Falar = function() {
         console.log("Meu nome é: " + this.nome)
         console.log("Minha espécie é: " + this.especie)
@@ -7,23 +9,26 @@ function Animal(nome) {
     }
 }
 
-function Especie(nome, especie) {
-    this.especie = especie
-    Animal.call(this, nome)
+function Cachorro(nome, especie, comidaFavorita) {
+    Animal.call(this, nome, especie, comidaFavorita);
 }
 
-function ComidaFavorita(nome, especie, comidaFavorita) {
-    this.comidaFavorita = comidaFavorita
-    Especie.call(this, nome, especie)
+function Gato(nome, especie, comidaFavorita) {
+    Animal.call(this, nome, especie, comidaFavorita)
 }
 
-const animal1 = new ComidaFavorita("Rex", "Cachorro", "Osso")
-const animal2 = new ComidaFavorita("Mingau", "Gato", "Peixe")
-const animal3 = new ComidaFavorita("Pipoca", "Coelho", "Cenoura")
+function Coelho(nome, especie, comidaFavorita){
+    Animal.call(this, nome, especie, comidaFavorita)
+}
 
-animal1.Falar()
-console.log() /*quebra de linha*/
-animal2.Falar()
-console.log() /*quebra de linha*/ 
-animal3.Falar()
+const cachorro = new Cachorro("Rex", "Cachorro", "Osso")
+const gato = new Gato("Mingau", "Gato", "Peixe")
+const coelho = new Coelho("Pipoca", "Coelho", "Cenoura")
+
+cachorro.Falar(cachorro)
+console.log() // quebra de linha
+gato.Falar(gato)
+console.log() // quebra de linha
+coelho.Falar(coelho)
+
 
